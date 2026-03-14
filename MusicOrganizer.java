@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * A class to hold details of audio files.
@@ -98,5 +99,16 @@ public class MusicOrganizer
         }
             
         }
+    public void playRandomFile()
+    {
+        if(files.size() == 0) {
+        System.out.println("No files available.");
+        return;
+        }
+        Random shuffle = new Random();
+        int index = shuffle.nextInt(files.size());
+        String filename = files.get(index);
+        System.out.println("Playing: " + filename);
+    }
 }
   
